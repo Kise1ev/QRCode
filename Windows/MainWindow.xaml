@@ -1,0 +1,55 @@
+﻿<Window x:Class="QRCode.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="QR Code Generator" Height="404" Width="250"
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <GroupBox x:Name="groupBoxMain"
+                  Margin="40 20">
+            <Image x:Name="imageQRCode"/>
+        </GroupBox>
+
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Введите текст:"
+                       TextAlignment="Center"/>
+            <TextBox x:Name="txtSource"
+                     Height="20"
+                     Width="200"
+                     TextChanged="txtSource_TextChanged"/>
+
+            <Button x:Name="btnMakeQRCode" 
+                    Width="200"
+                    Height="20"
+                    Margin="0 10 0 0"
+                    Content="Создать QR код"
+                    IsEnabled="False"
+                    Click="btnMakeQRCode_Click"/>
+            <Button x:Name="btnSaveQRCode" 
+                    Width="200"
+                    Height="20"
+                    Margin="0 10 0 0"
+                    Content="Сохранить QR код"
+                    IsEnabled="False"
+                    Click="btnSaveQRCode_Click"/>
+            <Button x:Name="btnLoadQRCode" 
+                    Width="200"
+                    Height="20"
+                    Margin="0 10 0 0"
+                    Content="Загрузить QR код"
+                    Click="btnLoadQRCode_Click"/>
+            <Button x:Name="btnDecodeQRCode" 
+                    Width="200"
+                    Height="20"
+                    Margin="0 10 0 0"
+                    Content="Распознать QR код"
+                    IsEnabled="False"
+                    Click="btnDecodeQRCode_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
